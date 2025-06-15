@@ -1,33 +1,37 @@
-<html>
-    <head>
-        <!-- Recommended meta tags -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Simulador Gacha</title>
+    <link rel="stylesheet" href="style.css">
 
-        <!-- PyScript CSS -->
-        <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
-        <!-- CSS for examples -->
-        <link rel="stylesheet" href="./assets/css/examples.css" />
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
 
-        <!-- This script tag bootstraps PyScript -->
-        <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <body>
+            <div class="container">
+            <h1>Simulador Gacha</h1>
 
-        <!-- Custom CSS -->
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-        <link rel="stylesheet" href="./assets/css/tictactoe.css" />
+            <div id="estado-jugador">
+                <p>Gemas: <span id="gemas">200</span></p>
+                <p>Pity: <span id="pity">0</span>/9</p>
+            </div>
 
-        <!-- for splashscreen -->
-        <style>
-            #loading { outline: none; border: none; background: transparent }
-        </style>
-        
-        <script type="module">
-            const loading = document.getElementById('loading');
-            addEventListener('py:ready', () => loading.close());
-            loading.showModal();
-        </script>
+            <div id="acciones">
+                <button id="invocar-x1">Invocar x1 (10 Gemas)</button>
+                <button id="invocar-x10">Invocar x10 (100 Gemas)</button>
+            </div>
 
-        <title>Gacha Sistema</title>
-    </head>
+            <div id="resultados">
+                <h2>Resultados:</h2>
+                <div id="resultados-items">
+                </div>
+            </div>
 
+            <div id="mensajes">
+            </div>
+        </div>
+    </body>
 </html>
