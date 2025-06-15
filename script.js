@@ -85,7 +85,7 @@ function invocarItem(pityActivo = false) {
     } else {
         pityContador = 0;
     }
-
+    triggerPulseAnimation(inventoryIcon);
     return itemObtenido;
 }
 
@@ -109,6 +109,13 @@ function mostrarResultados(itemsObtenidos) {
         `;
         resultadosDiv.appendChild(itemDiv);
     }
+}
+
+// Agrega pequeña animacion para resaltar un elemento de forma temporal
+function triggerPulseAnimation(element) {
+  element.classList.remove('pulse-animation');
+  void element.offsetWidth;
+  element.classList.add('pulse-animation');
 }
 
 // ¡NUEVA FUNCIÓN PARA RENDERIZAR EL INVENTARIO!
@@ -144,6 +151,8 @@ function renderizarInventario() {
         inventoryItemsDiv.appendChild(itemStackDiv);
     }
 }
+
+
 
 // --- EVENT LISTENERS ---
 
