@@ -35,7 +35,7 @@ const pityRarity = [
 let gemas = 200;
 let pityContador = 0;
 let inventario = []; // ¡NUESTRO INVENTARIO!
-const pityMaximo = 9;
+const pityMaximo = 7;
 const costoInvocacionX1 = 10;
 const costoInvocacionX10 = 100;
 
@@ -68,6 +68,11 @@ function seleccionarRareza(tablaProbabilidades) {
 }
 
 function invocarItem(pityActivo = false) {
+
+    if (pityActivo){
+        alert("Modo Pity Activo, obtendrás un item raro o épico.");
+    }
+
     const rarezaSeleccionada = pityActivo 
         ? seleccionarRareza(pityRarity) 
         : seleccionarRareza(rarezas);
